@@ -1,0 +1,107 @@
+HELPFUL NOTES
+WYSAC Wyoming Tobacco Project
+
+
+|| GENERAL CONTENT WRANGLING ||
+
+Content is divided into two categories, utilizing post-types, sub-categories and tags to wrangle content and reference within page templates.
+
+* Categories *
+
+    > Categories by WP Slug <
+    A. publications
+        a. reports
+        b. fact-sheets
+        c. briefs
+    B. resources
+
+    > Cat Slugs by ID <
+    1. resources
+    2. publications
+    3. reports
+    4. briefs
+    5. fact-sheets
+
+* Post Types for Resources Category *
+Posts within the resources category should be published with a post-type selected.  This is chose in the Format menu in the Edit Post UI.
+
+    > Post Types <
+      1. Standard
+      2. Image
+      3. Video
+      4. Quote
+      5. Link
+
+These post-types are called on resource category single posts and in the resources archive.  They can also be called elsewhere.
+
+* Tags *
+Tags are called Topics on the site.  They are used to sort and viewed in a tag archive page and appear in the main navigation.
+
+    > Tag Descriptions on Archive Pages<
+    Tag archive pages, "Topics," have a brief description of the topic that appears before the archive list of posts.  This description is pulled and managed via the Tags UI in the backend.  The description will not appear unless a description is entered in this specific area.
+
+
+|| PERMALINKS ||
+
+There are three types of permalinks based on the type of URL:
+
+1. Default/posts  :   /Year/month/day/post
+2. Categories     :   /category/publication/post
+3. Tags           :   /topics/tag
+
+
+|| SIDEBARS ||
+
+There are 5 sidebar templates to control what information appears in the right column for each type of page.
+
+* Sidebars *
+1. Homepage: index only
+2. Pub: publications category single posts and sub categories
+3. Resource: resource category single posts AND resource category archive page
+4. Archive: publication category archive and author archive page
+5. About : about page only
+
+      ** Tag archive page sidebar TK
+
+* Sidebar Templates *
+All templates are saved as sidebar-[name].php and referenced in the page template by [name].
+1. -homepage
+2. -pub
+3. -resource
+4. -archive
+5. -about
+
+* What's included in each sidebar ? *
+Sidebars can be coded or dynamic.  Coded sidebars are directly in the sidebar template.  Dynamic sidebars allow users to add content from the WP UI backend in the Widget menu.  Both types can be called within each page template.
+
+    > homepage <
+      - image or promo :  dynamic_sidebar
+      - Recent Publications  :  coded
+      - Recent Resources  :  coded
+
+    > pub <
+      - About publication : custom field from post
+      - Related Topics (tags of post)  :  coded
+
+    > resource <
+      - Resource disclaimer : dynamic_sidebar
+      - Post Types : coded
+      - Topics : coded
+
+    > archive <
+      - Topics : coded
+
+    > about <
+      - Need Help? : coded
+      - WYSAC blurb ; dynamic_sidebar
+
+|| HOMEPAGE CONTENT ||
+
+* Main Text *
+This text is be changed by editing the Home Page under Pages.  This page is set as the Front Page of the WP site in settings.
+
+* Right Sidebar *
+The recent lists in the sidebar are hard coded in the side-homepage.php template.  The promo image at the top is a Widget and can be edited by visiting Appearance / Widgets / Homepage Promo Image.
+
+* Baseball Cards *
+The baseball cards are in a dynamic widget area.  
